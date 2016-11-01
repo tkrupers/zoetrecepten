@@ -1,0 +1,181 @@
+
+#single-page {
+
+	span.label {
+		font-size: 14px;
+		margin-right: 5px;
+	}
+
+	.single-content-left {
+		padding-right: 2em;
+
+		p {
+			font-size: 16px;
+			line-height: 2;
+		}
+
+		.single-hero-image {
+			background-size: cover !important;
+			max-height: 500px;
+			background-position-y: 50% !important;
+		}
+
+		.single-page-article {
+			display: block;
+			position: relative;
+			background: #fff;
+			padding: 1em 3em;
+		}
+		
+		.recipe-header {
+			background: @brand-secondary;
+			text-align: center;
+
+			.entry-header {
+				padding: 2em;
+				color:@text-color;
+				width: 100%;
+				z-index: 10;
+
+				.thumb-recipe-header {
+					width: 20%;
+					float: left;
+					border-radius: 50%;
+					position: relative;				
+				}
+
+				h1.entry-title {
+					position: relative;
+					margin: 0;
+					overflow: hidden;
+					padding: .25em 0;
+					color: #fff;
+					text-align: center;
+					clear: right;
+					&:before,
+					&:after {
+						content: "\f004";
+						font-family: "FontAwesome";
+						padding: 0 10px;
+						font-size: 16px;
+						vertical-align: middle;
+						color: #fff;
+					}
+				}
+
+				.meta-omschrijving {
+					margin: 0 auto;
+					font-size: 12px;
+					color: @text-color;
+					padding: 5px 0;
+
+					span.meta-label {
+						padding: 5px 
+					}
+				}
+
+				.recipe-details {
+					position: relative;
+					top:2px;
+
+					.moeilijkheidsgraad,
+					.bereidingstijd,
+					.personen {
+						display: inline-block;
+						padding-left: 5px;
+					}
+
+					.bereidingstijd,
+					.personen {
+						border-left: 1px solid @text-color;
+					}
+				}
+			}
+		}
+
+		.banner-recipe {
+			padding: 1em 0;
+			width: 100%;
+			background: @brand-primary;
+			position: relative;
+			display: inline-block;
+		}
+
+		.recipe-buttons {
+			margin: 0;
+			position: relative;
+			li {
+				border:0 !important;
+				text-align: center;
+				margin-right: -10px;
+				position: relative;
+
+				&#print-button {
+					cursor: pointer;
+				}
+				a.email-button {
+					color: @text-color;
+				}
+
+				&:hover {
+					color: @brand-primary !important;
+					a.email-button { 
+						color: @brand-primary; 
+					}
+				}
+			}
+		}
+
+		#recipe {
+			background: #fff;
+			padding-top: 1em;
+			padding-bottom: 2em;
+
+			h3 {
+				font-size: 32px;
+				margin-bottom: 1em;
+			}
+
+			p, ul, ol {
+				font-size: 14px;
+				line-height: 2;
+				margin: 0;
+				padding-bottom: 1em;
+			}
+
+			ul {
+				list-style: none;
+				color: @brand-primary;
+				font-weight: 600;
+				padding-right: 3em;
+
+				li {
+					color: @text-primary;
+					font-weight: 300;
+					border-bottom: 1px dashed #999;
+				}
+			}
+
+			ol > li {
+				margin-top: 1em;
+			}
+
+			img {
+				max-height: 75%;
+				background-position: 50%;
+				overflow: hidden;
+			}
+		}
+
+
+	}
+
+}
+
+@media all and (max-width: 768px) {
+	h1.entry-title {
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		margin-right: 2.5em !important;
+	}
+}

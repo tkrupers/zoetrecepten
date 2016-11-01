@@ -1,0 +1,79 @@
+.site-main	{
+
+	// Headers
+	.header-wrapper {
+		padding: 2em 0;
+		width: 100%;
+		text-align: center;
+
+		.title,
+		.heart {
+			display: inline-block;
+		}
+
+		.title {
+
+			h3 {
+				font-size: 36px;
+			}
+
+			h3:before,
+			h3:after {
+				content: '';
+				border-bottom: 2px dashed #BFBFBF;
+				position: relative;
+				left: 0;
+				right: 0;
+				margin: 0 .5em;
+				top:-21px;
+
+				@media all and (min-width:768px) {
+					padding: 0 2em;
+				}
+			}
+		}
+
+		.heart {
+			position: relative;
+  			bottom: 5px;
+			* {
+				color: @brand-primary;
+				}
+			}
+	}
+
+
+	// Grid
+	.new-post-grid,
+	.gezondigen-post-grid,
+	.basic-post-grid {
+		width: 100%;
+	  	display: inline-block;
+	  	padding-bottom: 2em;
+  		position: relative;
+	}
+
+	.meer-recepten {
+		margin-top: 2em;
+	}
+
+	.basic-post-grid {
+		padding-bottom: 2em !important;
+	}
+
+	section.gezondigen-posts {
+		background: #222;
+
+		.header-wrapper h3 {
+			color: #fff;
+		}
+
+		.card {
+			box-shadow: 0 2px 1px #181818;
+		}
+	}
+
+	.label-default {
+		background: @brand-secondary;
+	}
+}

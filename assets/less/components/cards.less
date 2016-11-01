@@ -1,0 +1,190 @@
+.card {
+	background: #fff;
+	position: relative;
+	height: 400px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-top: 2em;
+	padding: 0;
+
+	@media all and (min-width: 768px) {
+		width: 350px;
+		margin-left: 2em;
+	}
+
+	@media all and (max-width: 768px) {
+		width: 300px;
+		margin-left: 10px;
+		margin-right: 20px;
+	}
+
+	float: left;
+	box-shadow: 0 2px 1px #ccc, 0 0 7px #F0F0F0;
+	box-sizing: border-box;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
+	.entry-header {
+
+		a {
+			color: #444;
+		}
+
+		.card-image {
+			overflow: hidden;
+			width: 100%;
+			max-height: 250px;
+			position: relative;
+			top:0;
+			left:0;
+			right:0;
+			transition: all 0.3s cubic-bezier(0.42, 0.0, 0.58, 1.0);
+
+			.bekijk-recept {
+
+				position: absolute;
+				z-index: 10;
+				width: 100%;
+				display: block;
+				top: 15%;
+				padding: 2em 0;
+				opacity: 0;
+				transform: translateY(50%);
+				text-align: center;
+				transition: all 0.5s cubic-bezier(0.42, 0.0, 0.58, 1.0);
+				font-size: 200%;
+				font-family: 'Amatic SC';
+				font-weight: 600;
+				color: rgba(255, 255, 255, 1);
+			}
+
+			&:hover .bekijk-recept {
+				opacity: 1;
+				transform: translateY(0);
+			}	
+		}
+
+		.displayMoment {
+			  padding: 0 1em;
+			  font-style: italic;
+			  font-size: 85%;
+			  margin: -10px 0 10px;
+		}
+	}
+
+	.caption,
+	.card-entry {
+		padding: 1em;
+
+		h3 {
+			font-size: 30px;
+			margin: 0;
+		}
+	}
+
+	.social-buttons {
+		position: absolute;
+		bottom: 0;
+		right: 1em;
+
+		ul {
+			margin-bottom: 0;
+		}
+
+		.social-item {
+			margin-left: .5em;
+			font-size: 24px;
+			* {
+				color: #444;
+			}
+		}
+	}
+
+	.difficulty {
+	  position: absolute;
+	  font-size: 130%;
+	  bottom: 0;
+	  left: 105px;
+
+	    .tooltip {
+	    	z-index:1;
+	    	.tooltip-arrow {
+				border-top-color: lighten(@brand-primary, 5%);
+	    	}
+	    	.tooltip-inner {
+				background: lighten(@brand-primary, 5%);
+				font-family: 'Open Sans', sans-serif;
+				font-style: italic;
+	    	}
+	    }
+	}
+
+	.card-footer {
+		position: absolute;
+		bottom: 0;
+		padding: 0 1em 1em;
+
+		.label {
+			  padding: .3em 1em;
+			  font-size: 110%;
+			  position: absolute;
+			  bottom: 0;
+			  left: 0;
+			  border-top-left-radius: 0;
+			  border-bottom-left-radius: 0;
+			  border-bottom-right-radius: 0
+		}
+	}
+
+	&.card-recept {
+		border-bottom: 4px solid @brand-primary;
+	}
+
+	&.card-blog {
+		border-bottom: 4px solid @brand-secondary;
+	}
+
+}
+
+.basic-card {
+	&:extend(.card);
+
+	@media all and (max-width:768px) {
+		width: 95%;
+	}
+
+
+	@media all and (min-width:768px) {
+		width: 50%;
+	}
+
+	background: transparent;
+	box-shadow: none;
+	height: auto;
+	margin: 0;
+	.margin-wrapper {
+		width: 95%;
+		display: inline-block;
+		background: #fff;
+		box-shadow: 0 1px 2px #ccc;
+		margin: .5em 1em; 
+		height: 135px;
+		overflow: hidden;
+		border-radius: 3px;
+	}
+	.entry-header {
+		float: left;
+		max-width: 50%;
+	}
+
+	.card-entry {
+	  white-space: pre-line;
+	  float: left;
+	  max-width: 50%;
+	  text-align: center;
+	  padding: 0 1em;
+
+	  h3 {
+	  	color: @text-color;
+	  }
+	}
+}

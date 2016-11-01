@@ -1,0 +1,64 @@
+.social-buttons-single-page {
+
+	display: block;
+	position: relative;
+	
+	.container-fluid,
+	.container {
+		background: #fff;
+	}
+
+	h2 {
+		text-align: center;
+	}
+
+	.suikerbusje {
+		position: relative;
+		display: inline-block;
+		margin-left: -35px;
+		padding: 2em 0 0;
+		transform: scale(-1, 1);
+		img {
+			width:75px;
+		}
+	}
+
+	.zoetrecepten-social {
+		display: block;
+		text-align: center;
+
+		.social-btn {
+			display: inline-block;
+			margin: 1em;
+			padding: 15px 25px;
+			border-radius: 4px;
+			cursor: pointer;
+			color: #fff;
+			width:155px;
+			font-weight: 600;
+
+			span.fa {
+				padding-right: 8px;
+				color: #fff;
+				font-size: 20px;
+
+			}
+
+			&.facebook {
+				background-color: @brand-fourth;
+			}
+			&.twitter {
+				background-color: @brand-secondary;
+			}
+			&.pinterest {
+				background-color: @brand-primary;
+			}
+			&.instagram {
+				background-color: @brand-third;
+			}
+			&.mail {
+				background-color: #ccc;
+			}
+		}
+	}
+}

@@ -1,0 +1,246 @@
+header.top-header {
+	border-top: 5px solid @brand-primary;
+}
+.zoet-container {
+	background: #fff;
+	padding:0;
+	position: relative;
+	z-index: 1050;
+}
+.suikerbusje {
+	position: absolute;
+	z-index: 9;
+	top: 0;
+	left: 50%;
+	margin-left: -148px;
+	padding-top: 1em;
+
+	&.inverted {
+		transform: scale(-1, 1);
+	}
+
+	img {
+		width: 60%;
+	}
+}
+
+.page-header {
+	margin: 0;
+	border:0;
+
+
+	.page-logo {
+		text-align: center;
+		padding: 6em 0 2em;
+		background: #fff;
+	}
+
+	.social-icons {
+		@media all and (min-width: 768px) {
+			float: right;
+			margin-top: -75px;
+			margin-right: 10px;
+
+			&.single {
+				margin-right: 20px;
+			}
+		}
+		@media all and (max-width: 768px) {
+			text-align: center;
+		}
+		span.fa-stack {
+			display: inline-block;
+			cursor:pointer;
+		}
+
+		i.fa-circle.facebook {
+			color: @brand-fourth;
+		}
+		i.fa-circle.twitter {
+			color: @brand-secondary;
+		}
+		i.fa-circle.pinterest {
+			color: @brand-primary;
+		}
+		i.fa-circle.instagram {
+			color: @brand-third;
+		}
+	}
+
+	.menu-header {
+		display:inline-block;
+		margin: 0 30px 15px 30px;
+
+		@media all and (min-width:768px) {
+			height: 62px;
+			border-top: 1px solid;
+			border-bottom: 1px solid;
+			border-color: #d7d7d7;
+		}
+		@media all and (max-width:768px) {
+			padding:0;
+		}
+	.navbar-default {
+		border: none;
+		margin-bottom: 1em;
+
+		#zoetrecepten-nav {
+			text-align: center;
+		}
+	}
+
+	.search-container {
+		display:flex;
+		height:100%;
+
+		.input-group {
+			margin: auto;
+
+			input {
+				padding-left: 15px;
+			}
+
+			input,
+			button {
+				height: 40px;
+			}
+		}
+		form {
+			display: inline-flex;
+		}
+	}
+
+	.search-container,
+	.col-sm-9 {
+		@media all and (max-width:768px) {
+			width: 100%;
+			padding:0;
+		}
+	}
+}
+
+	.content-area {
+		background: #fff;
+	}
+}
+
+@media (min-width:768px) {
+	.navbar-nav {
+		float: inherit;
+	}
+	.navbar-nav>li {
+		float:inherit;
+	}
+	.nav>li {
+		display: inline-block;
+	}
+}
+
+.nav > li > a {
+	line-height: @navbar-height/2;
+	font-size: 12px;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+.navbar-brand {
+	img {
+		max-width:50px;
+		max-height: 50px;
+		position:relative;
+		top:-13px;
+	}
+}
+
+.new-post-single {
+	@media (min-width:768px) {
+		padding-right: 2em;
+	}
+}
+
+.new-post-home {
+	h1 {
+		font-size: -webkit-xxx-large;
+		color: @text-color;
+		padding:0;
+
+		small {
+			font-size: 65% !important;
+			display:block;
+			color: @brand-fourth !important;
+		}
+	}
+	padding-bottom:1em;
+}
+
+// Header
+
+.header-hero {
+	position: relative;
+	height: 100%;
+
+	// Hero text
+	.hero-text-wrapper {
+		position: absolute;
+		background: none;
+		border: 2px solid #fff;
+		top: 50%;
+		left: 50%;
+		margin-left: -177px;
+		margin-top: -38px;
+
+		h1 {
+			margin: 0;
+			padding: 15px 60px;
+			color: #fff;
+		}
+	}
+
+	// Hero image
+	.hero-image-wrapper {
+		background: url('img/bg.jpg') no-repeat fixed;
+		background-size: cover;
+		height: 400px;
+		background-position: 50% 100%;
+	}
+}
+
+.home-sidebar {
+	h1 {
+		margin: 0;
+	}
+
+	.author-bio {
+		h3 {
+			padding:0;
+			margin:0;
+		}
+	}
+	.search-form {
+		height: 100px;
+
+		h3 {
+			display: block;
+			color: @brand-primary;
+			font-weight: 600;
+			text-align: center;
+		}
+
+		.search-input {
+			width:100%;
+			padding: 0 1em;
+		}
+	}
+}
+
+.triangle {
+	width: 0;
+	height: 0;
+	border-left: 30px solid transparent;
+	border-right: 30px solid transparent;
+	border-top: 30px solid #fff;
+	z-index: 10;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin-left: -15px;
+}

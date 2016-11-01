@@ -1,0 +1,22 @@
+@media print {
+
+	body {
+		font-family: 'Open Sans', serif;
+		background: none;
+		color: black;
+	}
+
+	#single-page {
+		width: 100%;
+		margin: 0; padding: 0;
+		background: none;
+	}
+
+	.header-hero, .social-icons, .recipe-buttons, .navbar, .single-content-right, .search-wrapper, #comments, #author, #footer, .social-buttons-single-page {
+		display: none !important;
+	}
+	.entry-content a:after {
+		content: " [" attr(href) "] ";
+	}
+
+}

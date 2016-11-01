@@ -417,6 +417,43 @@ function conditional_js() {
 }
 add_action( 'wp_enqueue_scripts', 'conditional_js' );
 
+add_filter( 'script_loader_tag', 'wsds_defer_scripts', 10, 3 );
+function wsds_defer_scripts( $tag, $handle, $src ) {
 
+	// The handles of the enqueued scripts we want to defer
+	$defer_scripts = array(
+		'foodyrss-admin-script',
+		'admin-bar',
+		'contact-form-7',
+		'cookie-law-info-script',
+		'sb_instagram_scripts',
+		'pin-it',
+		'comment-reply'
+	);
+
+    if ( in_array( $handle, $defer_scripts ) ) {
+        return '<script src="' . $src . '" defer="defer" type="text/javascript"></script>' . "\n";
+    }
+
+    return $tag;
+}
+
+add_filter('script_loader_tag', 'add_async_attribute', 10, 2);
+function add_async_attribute($tag, $handle) {
+   // add script handles to the array below
+   $scripts_to_async = array(
+		 'jquery',
+		 'adf-script',
+		 'script-js',
+		 'theme-js',
+	 );
+
+   foreach($scripts_to_async as $async_script) {
+      if ($async_script === $handle) {
+         return str_replace(' src', ' async="async" src', $tag);
+      }
+   }
+   return $tag;
+}
 // Register Custom Navigation Walker
 require_once('wp_bootstrap_navwalker.php');

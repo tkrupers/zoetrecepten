@@ -74,6 +74,14 @@ section#author,
 		z-index:1;
 		cursor: pointer;
 
+		@media (max-width:768px) {
+				border-radius: 0;
+
+				img {
+					border-radius: 50%;
+				}
+		}
+
 		&:hover .caption {
 			transform: translate(0,0);
 		}
@@ -127,14 +135,14 @@ hr.divider {
   background: @brand-fourth;
   padding:1em;
 
-	.newsletter-wrapper {	
+	.newsletter-wrapper {
 		h1 {
 			margin: 0 auto;
 			color: #fff;
 			padding: 0;
 			text-align: center;
 			font-size:24px;
-		}	
+		}
 		p {
 			font-size: 13px;
 			color: #fff;
@@ -156,17 +164,39 @@ hr.divider {
 			margin: 0 auto;
 			font-size: 13px;
 			width:75%;
+
+			input.wysija-input {
+				width: 100%;
+				margin-bottom: 5px;
+				height: 34px;
+				border-radius: 3px;
+				font-size: 14px;
+			}
+
+			input.wysija-submit {
+				border-radius: 0;
+		    background: #f1606c;
+		    border: 1px solid transparent;
+		    color: #fff;
+		    text-shadow: none;
+		    box-shadow: none;
+		    font-weight: bold;
+			}
+		}
+
+		.formError .formErrorContent {
+		  background: none repeat scroll 0 0 #f1606c;
 		}
 	}
 }
 
-.es_caption 
+.es_caption
 {
 	padding-bottom:5px;
 	padding-top:5px;
 	padding-right:5px;
 }
-.es_msg 
+.es_msg
 {
   padding-top: 5px;
   padding-bottom: 5px;
@@ -174,23 +204,23 @@ hr.divider {
   font-weight: 600;
   font-size: 14px;
 }
-.es_textbox 
+.es_textbox
 {
 	padding-bottom:10px;
 }
-.es_button 
+.es_button
 {
 	padding-top:10px;
 	padding-bottom:5px;
 }
 
-.es_textbox_class 
+.es_textbox_class
 {
 	width:100%;
-	padding:8px !important; 
+	padding:8px !important;
 	float:left;
 }
-.es_textbox_button 
+.es_textbox_button
 {
 
 }

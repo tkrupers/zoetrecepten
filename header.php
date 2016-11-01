@@ -138,29 +138,18 @@
                     ?>
                   </div><!-- /new-post-single -->
                   <div class="col-sm-4 home-sidebar hidden-xs hidden-sm">
-                   <div class="home-author col-xs-12">
-                     <div class="col-lg-6">
-                       <div class="author-image"></div>
-                     </div>
-                     <div class="col-lg-6">
-                       <div class="author-bio">
-                         <h3>Late night baking,</h3>cheesecake, niet moeilijk doen, foodstyling, <strong>zoete inspiratie</strong> en HEERLIJKE recepten!
-                         Liefde voor alles dat zoet is. <br>Geniet jij mee?<br>X <strong>Mariette</strong>
-                       </div>
-                     </div>
-                   </div>
 
-<h1>Nieuwsbrief</h1>
+                  <?php get_template_part('content', 'bio'); ?>
 
-<div class="newsletter">
-  <div class="newsletter-wrapper">
-    <p><strong>Schrijf je in</strong> en ontvang een mailtje bij elke nieuwe zoete post     <span class="fa fa-heart"></span></p>
+                    <div class="newsletter">
+                      <div class="newsletter-wrapper">
+                        <p><span style="color: #f1606c;font-size: 18px;display: block;">NIEUWSBRIEF</span> <strong>Schrijf je in</strong> en ontvang een mailtje bij elke nieuwe zoete post     <span class="fa fa-heart"></span></p>
 
-    <div class="input-group">
-    <?php echo do_shortcode('[wysija_form id="1"]') ?>
-    </div>
-  </div>
-</div>
+                        <div class="input-group">
+                        <?php echo do_shortcode('[wysija_form id="1"]') ?>
+                        </div>
+                      </div>
+                    </div>
 
 </div><!-- /home-sidebar -->
       </div> <!-- /#header-content -->

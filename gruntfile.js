@@ -15,15 +15,13 @@ module.exports = function (grunt) {
             }
         }
     },
-    
+
     concat: {
       options: {
         separator: ';',
       },
       js_script: {
         src: [
-          './bower_components/sweetalert/lib/sweet-alert.js',
-          './bower_components/selectize/dist/js/standalone/selectize.js',
           './bower_components/bootstrap/js/tooltip.js',
           './bower_components/bootstrap/js/alert.js',
           './bower_components/bootstrap/js/button.js',
@@ -52,7 +50,7 @@ module.exports = function (grunt) {
 
       script: {
         files: {
-          // Minifies  script.js 
+          // Minifies  script.js
           './public/js/script.min.js': './public/js/script.js',
         }
       },
@@ -81,7 +79,7 @@ module.exports = function (grunt) {
           files: [
             // Watched files
             './assets/js/script.js',
-            ],   
+            ],
           tasks: ['concat:js_script','uglify:script'],
           options: {
           livereload: true
@@ -91,7 +89,7 @@ module.exports = function (grunt) {
           files: [
             // Watched files
             './assets/js/theme.js',
-            ],   
+            ],
           tasks: ['concat:js_theme','uglify:theme'],
           options: {
           livereload: true
@@ -99,7 +97,7 @@ module.exports = function (grunt) {
         },
         less: {
           // Watched files
-          files: ['./assets/less/**/*.less'],  
+          files: ['./assets/less/**/*.less'],
           tasks: ['less'],
           options: {
           livereload: true
@@ -107,7 +105,7 @@ module.exports = function (grunt) {
         },
         images: {
           // Watched files
-          files: ['./assets/img/**/*.{png,jpg,gif}'], 
+          files: ['./assets/img/**/*.{png,jpg,gif}'],
           tasks: ['imagemin'],
           options: {
           livereload: true
@@ -130,7 +128,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
-  
+
   // Compile CSS and Javascript
   grunt.registerTask('compile', ['concat', 'less', 'uglify', 'imagemin']);
 

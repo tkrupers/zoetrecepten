@@ -34,7 +34,7 @@
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-@body-bg:               @bg-color; 
+@body-bg:               @bg-color;
 //** Global text color on `<body>`.
 @text-color:            #444;
 
@@ -179,7 +179,9 @@
 
 @btn-link-disabled-color:        @gray-light;
 
-
+@btn-border-radius-base:         @border-radius-base;
+@btn-border-radius-large:        @border-radius-large;
+@btn-border-radius-small:        @border-radius-small;
 //== Forms
 //
 //##
@@ -493,7 +495,7 @@
 @jumbotron-bg:                   @gray-lighter;
 @jumbotron-heading-color:        inherit;
 @jumbotron-font-size:            ceil((@font-size-base * 1.5));
-
+@jumbotron-heading-font-size:    ceil((@font-size-base * 4.5));
 
 //== Form states and alerts
 //
@@ -868,3 +870,6 @@
 @dl-horizontal-offset:        @component-offset-horizontal;
 //** Horizontal line color.
 @hr-border:                   @gray-lighter;
+
+//** Point at which .dl-horizontal becomes horizontal
+@dl-horizontal-breakpoint:    @grid-float-breakpoint;

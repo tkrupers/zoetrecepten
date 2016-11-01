@@ -8,12 +8,6 @@
 <?php if ( in_category('featured') && (get_post_type() == 'recepten')) { ?>
 	<article class="col-xs-12 card card-recept featured clearfix">
 
-<?php } elseif ( in_category('featured') && (get_post_type() == 'blog')) { ?>
-	<article class="col-xs-12 card card-blog featured clearfix">
-
-<?php }	elseif ( in_category('featured')) { ?>
-	<article class="col-xs-12 card featured clearfix">
-
 <?php }	elseif (get_post_type() == 'recepten') { ?>
 	<article class="col-xs-12 card card-recept clearfix">
 
@@ -30,7 +24,7 @@
 					<div class="bekijk-recept">
 						Bekijk
 					</div>
-					<?php the_post_thumbnail('large'); ?>
+					<?php the_post_thumbnail(array(350, 250)); ?>
 				</div>
 				<div class="caption">
 					<?php the_title( '<h3 class="entry-title">', '</h3>' ); ?>
@@ -44,20 +38,20 @@
 		<div class="card-entry">
 			<div class="difficulty">
 				<?php if( get_field('moeilijkheidsgraad')) { ?>
-			<?php 
+			<?php
 
 			if(get_field('moeilijkheidsgraad') == "1 ster") {
-				echo '<i class="fa fa-star-o" 
-				data-toggle="tooltip" 
-				data-placement="top" 
+				echo '<i class="fa fa-star-o"
+				data-toggle="tooltip"
+				data-placement="top"
 				title="Zeer makkelijk!"></i>';
 			};
 
 			if(get_field('moeilijkheidsgraad') == "2 sterren") {
 				echo '
-				<div 
-				data-toggle="tooltip" 
-				data-placement="top" 
+				<div
+				data-toggle="tooltip"
+				data-placement="top"
 				title="Gemakkelijk">
 				<i class="fa fa-star-o"></i>
 				<i class="fa fa-star-o"></i>
@@ -66,9 +60,9 @@
 
 			if(get_field('moeilijkheidsgraad') == "3 sterren") {
 				echo '
-				<div 
-				data-toggle="tooltip" 
-				data-placement="top" 
+				<div
+				data-toggle="tooltip"
+				data-placement="top"
 				title="Ietwat lastig">
 				<i class="fa fa-star-o"></i>
 				<i class="fa fa-star-o"></i>
@@ -78,9 +72,9 @@
 
 			if(get_field('moeilijkheidsgraad') == "4 sterren") {
 				echo '
-				<div 
-				data-toggle="tooltip" 
-				data-placement="top" 
+				<div
+				data-toggle="tooltip"
+				data-placement="top"
 				title="Lastig">
 				<i class="fa fa-star-o"></i>
 				<i class="fa fa-star-o"></i>
@@ -91,9 +85,9 @@
 
 			if(get_field('moeilijkheidsgraad') == "5 sterren") {
 				echo '
-				<div 
-				data-toggle="tooltip" 
-				data-placement="top" 
+				<div
+				data-toggle="tooltip"
+				data-placement="top"
 				title="Zeer lastig!">
 				<i class="fa fa-star-o"></i>
 				<i class="fa fa-star-o"></i>
@@ -101,33 +95,19 @@
 				<i class="fa fa-star-o"></i>
 				<i class="fa fa-star-o"></i>
 				</div>';
-			}; 
+			};
 			};
 			?>
-			</div>
-<!-- 				<div class="social-buttons">
-					<ul class="list-inline">
-						<li class="social-item">
-							<a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-						</li>
-						<li class="social-item">
-							<a href="#" target="_blank"><i class="fa fa-pinterest"></i></a>
-						</li>
-					</ul>
-				</div> -->
-			<!-- <?php echo get_excerpt(); ?> -->
-			</div><!-- .entry-content -->
-			<footer class="card-footer">
-				<?php if( get_post_type() == 'recepten' ) { ?>
-				<span class="label label-primary">Recept</span>
+		</div>
 
-				<?php } elseif( get_post_type() == 'blog' ) { ?>
-				<span class="label label-default">
-			Zoete praatjes
-				</span>
-				<?php } ?>
-			</footer><!-- .entry-footer -->
-		</article><!-- #post-## -->
+	<!-- <?php echo get_excerpt(); ?> -->
+	</div><!-- .entry-content -->
+	<footer class="card-footer">
+		<?php if( get_post_type() == 'recepten' ) { ?>
+		<span class="label label-primary">Recept</span>
 
-
-
+		<?php } elseif( get_post_type() == 'blog' ) { ?>
+		<span class="label label-default">Zoete praatjes</span>
+		<?php } ?>
+	</footer><!-- .entry-footer -->
+</article><!-- #post-## -->

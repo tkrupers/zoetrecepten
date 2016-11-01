@@ -15,7 +15,7 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-			
+
 			<?php if(have_posts()) : ?>
 
 				<div class="container">
@@ -34,17 +34,22 @@ get_header(); ?>
 				<?php endwhile; // end of the loop. ?>
 
 				<?php wp_pagenavi(); ?>
-				
+
 				</div>
 
 				<?php else :  ?>
-					<div class="alert alert-info" role="alert">
-						<div class="text-center">
-							<i class="fa fa-frown-o fa-2x"></i><br><em> Oh snap</em>, geen recept gevonden! 
+					<div class="container">
+						<div class="alert alert-warning" role="alert">
+							<div class="text-center">
+								<div><i class="fa fa-meh-o fa-2x"></i></div>
+								<em>Helaas peanut butter cheese</em>, geen recept gevonden!
+								<br /><br>
+								<div><a href="/recepten">Check hier</a> al mijn recepten of probeer een andere zoekterm.</div>
 							</div>
 						</div>
+					</div>
 				<?php endif; ?>
-			
+
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

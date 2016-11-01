@@ -41,11 +41,18 @@
 }
 
 .wp-pagenavi {
-    margin: 1em;
-    display: inline-block;
+    padding: 1em;
+    display: block;
+    word-wrap: break-word;
+
+    .pages {
+      display: block;
+    }
 
     a,
     span {
-        padding: 5px;
+      display: inline-block;
+      padding: 5px;
+      border: 0;
     }
 }

@@ -15,7 +15,7 @@ get_header(); ?>
 <div id="primary" class="content-area">
 	<main class="site-main" role="main">
 	<div class="container zoet-container home">
-
+		
 
 	<!-- Title -->
 	<div class="header-wrapper">
@@ -31,8 +31,8 @@ get_header(); ?>
 	</div>
 
 	<div class="new-post-grid clearfix">
-		<?php
-        $newest = new WP_Query(
+		<?php     
+        $query = new WP_Query(   
           array(
             'post_type'      => ['recepten', 'blog'],
             'posts_per_page' => 9,
@@ -40,21 +40,18 @@ get_header(); ?>
             'orderby'		 => 'date'
             ) );
 
-        if ( $newest->have_posts() ) :
+        if ( $query->have_posts() ) :
         // The Loop
-          while ( $newest->have_posts() ) : $newest->the_post();
+          while ( $query->have_posts() ) : $query->the_post();  
+        ?>
 
-						get_template_part( 'content', 'landingspage' );
+        <?php get_template_part( 'content', 'landingspage' ); ?>
 
-					endwhile;
-				wp_reset_postdata();
-			endif;
-		?>
-
-		<div class="col-xs-12 text-center meer-recepten">
-			<a href="/nieuw/page/2" class="btn btn-default btn-lg">Meer recepten...</a>
-		</div>
-
+        <?php 
+        endwhile;    
+        endif;
+        wp_reset_postdata(); 
+        ?>
 	</div><!-- /new-post-grid -->
 </div><!-- /container -->
 
@@ -85,8 +82,8 @@ get_header(); ?>
 			</div>
 
 			<div class="basic-post-grid">
-						<?php
-		        $query = new WP_Query(
+						<?php     
+		        $query = new WP_Query(   
 		          array(
 		            'post_type'      => 'recepten',
 		            'posts_per_page' => 10,
@@ -96,15 +93,15 @@ get_header(); ?>
 
 		        if ( $query->have_posts() ) :
 		        // The Loop
-		          while ( $query->have_posts() ) : $query->the_post();
+		          while ( $query->have_posts() ) : $query->the_post();  
 		        ?>
 
 		        <?php get_template_part( 'content', 'basicposts' ); ?>
 
-		        <?php
-		        endwhile;
+		        <?php 
+		        endwhile;    
 		        endif;
-		        wp_reset_postdata();
+		        wp_reset_postdata(); 
 		        ?>
 			</div>
 			</div><!-- /container -->

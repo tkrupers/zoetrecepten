@@ -2283,6 +2283,20 @@
 
 }(jQuery);
 ;(function ($) {
+
+  /* Config Selectize */
+
+  $('#input-tags').selectize({
+    delimiter: ',',
+    persist: false,
+    create: function(input) {
+      return {
+        value: input,
+        text: input
+      }
+    }
+  });
+
   /* add placeholder to subscription box */
   $("#es_txt_name_pg").attr("placeholder", "Vul hier je naam in");
   $("#es_txt_email_pg").attr("placeholder", "Vul hier je emailadres in");
@@ -2308,7 +2322,25 @@
     $('[data-toggle="tooltip"]').tooltip()
   })
 
+  /* Sweet alert */
+// sweetAlert("Oops...", "Something went wrong!", "error");
 
+/* Search header fixed */
+function waypoint(element, offset) {
+  new Waypoint({
+    element: element,
+    handler: function(direction) {
+      if (direction === 'down') {
+        element.addClass('fixed')
+      }
+
+      if (direction ===  'up') { 
+        element.removeClass('fixed')
+      }
+    },
+    offset: offset
+  });
+}
 	//Add pinterest button to all images inside single page article
 	jQuery(".single-page-article img").each(function() {
 		var siteUrl = window.location.href;

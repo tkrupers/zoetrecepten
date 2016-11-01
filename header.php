@@ -33,7 +33,7 @@
                 <img src="<?php bloginfo('template_directory'); ?>/assets/img/logo-zoet.svg" alt="Zoetrecepten" />
               </a>
             </div>
-
+      
             <div class="social-icons <?php if(!is_front_page()) : ?> single <?php endif; ?>">
               <a href="http://www.facebook.com/zoetrecepten" target="_blank">
                 <span class="fa-stack fa-lg" title="follow me on Facebook">
@@ -70,41 +70,36 @@
                 <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
               </span>
             </div>
-            <div class="container-fluid menu-header">
-            <div class="col-sm-9">
-              <nav class="navbar navbar-default" role="navigation">
-                <div class="container-fluid">
-                  <!-- Brand and toggle get grouped for better mobile display -->
-                  <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#zoetrecepten-nav">
-                      <span class="sr-only">Toggle navigation</span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                    </button>
-                    <!-- <a class="navbar-brand" href="<?php bloginfo( 'url' ); ?>"><?php bloginfo( 'name' ); ?></a> -->
 
-                  </div>
-                  <?php
-                  wp_nav_menu( array(
-                    'menu'              => 'primary',
-                    'theme_location'    => 'primary',
-                    'depth'             => 2,
-                    'container'         => 'div',
-                    'container_class'   => 'collapse navbar-collapse',
-                    'container_id'      => 'zoetrecepten-nav',
-                    'menu_class'        => 'nav navbar-nav',
-                    'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-                    'walker'            => new wp_bootstrap_navwalker()
-                    ));
+
+            <nav class="navbar navbar-default" role="navigation">
+              <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#zoetrecepten-nav">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <!-- <a class="navbar-brand" href="<?php bloginfo( 'url' ); ?>"><?php bloginfo( 'name' ); ?></a> -->
+
+                </div>
+                <?php
+                wp_nav_menu( array(
+                  'menu'              => 'primary',
+                  'theme_location'    => 'primary',
+                  'depth'             => 2,
+                  'container'         => 'div',
+                  'container_class'   => 'collapse navbar-collapse',
+                  'container_id'      => 'zoetrecepten-nav',
+                  'menu_class'        => 'nav navbar-nav',
+                  'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+                  'walker'            => new wp_bootstrap_navwalker()
+                  ));
                   ?>
-                  </div>
-                </nav>
-              </div>
-            <div class="col-sm-3 search-container">
-              <?php get_search_form(); ?>
-            </div>
-            </div>
+                </div>
+              </nav>
 
               <!-- Zoetrecepten/billboard+mobile -->
               <div id='adf-billboard' style='text-align:center; margin:auto;'>
@@ -113,8 +108,8 @@
               <?php if(is_front_page()) { ?>
                 <div id="header-content" class="content-area container">
                   <div class="new-post-single col-sm-8">
-                    <?php
-                    $query = new WP_Query(
+                    <?php     
+                    $query = new WP_Query(   
                       array(
                         'post_type'      => ['recepten', 'blog'],
                         'posts_per_page' => 1,
@@ -122,15 +117,15 @@
 
                     if ( $query->have_posts() ) :
         // The Loop
-                      while ( $query->have_posts() ) : $query->the_post();
+                      while ( $query->have_posts() ) : $query->the_post();  
                     ?>
 
                     <?php get_template_part( 'content', 'new-post-home' ); ?>
 
-                    <?php
-                    endwhile;
+                    <?php 
+                    endwhile;    
                     endif;
-                    wp_reset_postdata();
+                    wp_reset_postdata(); 
                     ?>
                   </div><!-- /new-post-single -->
                   <div class="col-sm-4 home-sidebar hidden-xs hidden-sm">
@@ -157,9 +152,17 @@
     </div>
   </div>
 </div>
-
-
+     <div class="search-wrapper">
+          <h1>Zoeken</h1>
+          <?php get_search_form(); ?>
+        </div><!-- /search-wrapper -->
+        
   </div><!-- /home-sidebar -->
+        <div class="search-wrapper visible-xs-block visible-small-block">
+          <h1>Zoeken</h1>
+          <?php get_search_form(); ?>
+        </div><!-- /search-wrapper -->
+
       </div> <!-- /#header-content -->
     </div><!-- /header -->
   </div><!-- /container -->
@@ -168,3 +171,6 @@
 
 <!-- meetpixels Hero Jam 1 campagne -->
 <div style="display:none;"><img src="http://pubads.g.doubleclick.net/gampad/ad?iu=/4045/Blogads/188898404&sz=1x1&t=campaign%3D188898404_429692164_1" /></div>
+
+<!-- meetpixels Hero Jam 2 campagne -->
+<div style="display:none;"><img src="http://pubads.g.doubleclick.net/gampad/ad?iu=/4045/Blogads/188898404&sz=1x1&t=campaign%3D188898404_429692164_2" /></div>

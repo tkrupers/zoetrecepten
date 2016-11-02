@@ -26,45 +26,30 @@ $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
 
 	</div><!-- /single-page-article -->
 
+	<?php
+	if($link = get_previous_post_link('%link', '%title')) {
+		echo '<div class="alignleft">
+						<div class="post-button previous">
+							<span class="fa fa-chevron-left"></span>
+							' . $link . '
+						</div>
+					</div>';
+	}
+
+	if($link = get_next_post_link('%link', '%title')) {
+		echo '<div class="alignright">
+						<div class="post-button next">
+							' . $link . '
+							<span class="fa fa-chevron-right"></span>
+						</div>
+					</div>';
+	}
+	?>
+
 	<?php if(is_singular('recepten')) : ?>
 		<section class="recipe">
 			<?php get_template_part('content', 'recept'); ?>
 		</section>
 	<?php endif; ?>
 
-	<div class="navigation">
-		<div class="header-wrapper">
-			<div class="heart">
-				<i class="fa fa-heart"></i>
-			</div>
-			<div class="title">
-				<h3>Lees verder</h3>
-			</div>
-			<div class="heart">
-				<i class="fa fa-heart"></i>
-			</div>
-		</div>
-
-
-
-			<?php
-			if($link = get_previous_post_link('%link', '%title')) {
-				echo '<div class="alignleft">
-								<div class="post-button previous">
-									<span class="fa fa-chevron-left"></span>
-									' . $link . '
-								</div>
-							</div>';
-			}
-
-			if($link = get_next_post_link('%link', '%title')) {
-				echo '<div class="alignright">
-								<div class="post-button next">
-									' . $link . '
-									<span class="fa fa-chevron-right"></span>
-								</div>
-							</div>';
-			}
-			?>
-	</div> <!-- end navigation -->
 </article><!-- #post-## -->

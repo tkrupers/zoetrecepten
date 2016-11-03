@@ -85,7 +85,7 @@ get_header(); ?>
 						<?php
 		        $query = new WP_Query(
 		          array(
-		            'post_type'      => 'recepten',
+		            'post_type' => 'recepten',
 		            'posts_per_page' => 10,
 		            'orderby' => 'rand',
 		            'category_name' => 'basisrecepten'
@@ -93,7 +93,7 @@ get_header(); ?>
 
 		        if ( $query->have_posts() ) :
 		        // The Loop
-		          while ( $query->have_posts() ) : $query->the_post();  
+		          while ( $query->have_posts() ) : $query->the_post();
 		        ?>
 
 		        <?php get_template_part( 'content', 'basicposts' ); ?>

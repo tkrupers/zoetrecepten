@@ -34,7 +34,7 @@
               </a>
             </div>
 
-            <div class="social-icons <?php if(!is_front_page()) : ?> single <?php endif; ?>">
+            <div class="social-icons hidden-xs <?php if(!is_front_page()) : ?> single <?php endif; ?>">
               <a href="http://www.facebook.com/zoetrecepten" target="_blank">
                 <span class="fa-stack fa-lg" title="follow me on Facebook">
                   <i class="fa fa-circle facebook fa-stack-2x"></i>
@@ -85,7 +85,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                       </button>
-                      <!-- <a class="navbar-brand" href="<?php bloginfo( 'url' ); ?>"><?php bloginfo( 'name' ); ?></a> -->
+                      <span class="visible-xs navbar-brand">Menu</span>
 
                     </div>
                     <?php

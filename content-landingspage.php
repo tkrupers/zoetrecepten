@@ -20,11 +20,17 @@
 <?php }	?>
 		<header class="entry-header">
 			<a href="<?php the_permalink(); ?>">
-				<div class="card-image">
+				<div class="card-image hidden-xs">
 					<div class="bekijk-recept">
 						Bekijk
 					</div>
 					<?php the_post_thumbnail(array(350, 250)); ?>
+				</div>
+				<div class="card-image visible-xs">
+					<div class="bekijk-recept">
+						Bekijk
+					</div>
+				<?php the_post_thumbnail(array(190, 125)); ?>
 				</div>
 				<div class="caption">
 					<?php the_title( '<h3 class="entry-title">', '</h3>' ); ?>
@@ -102,7 +108,7 @@
 
 	<!-- <?php echo get_excerpt(); ?> -->
 	</div><!-- .entry-content -->
-	<footer class="card-footer">
+	<footer class="card-footer hidden-xs">
 		<?php if( get_post_type() == 'recepten' ) { ?>
 		<span class="label label-primary">Recept</span>
 

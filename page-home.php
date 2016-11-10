@@ -35,7 +35,7 @@ get_header(); ?>
         $query = new WP_Query(
           array(
             'post_type'      => ['recepten', 'blog'],
-            'posts_per_page' => 9,
+            'posts_per_page' => 12,
             'offset'		 => 1,
             'orderby'		 => 'date'
             ) );
@@ -60,7 +60,7 @@ get_header(); ?>
  <div class="triangle"></div>
     <div class="hero-image-wrapper">
       <div class="hero-text-wrapper">
-        <h1>Liefde voor alles dat zoet is!</h1>
+        <span>Liefde voor alles dat zoet is met een snufje zout!</span>
       </div>
   </div> <!-- /hero-image-wrapper -->
 </section> <!-- /header-hero -->

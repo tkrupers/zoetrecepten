@@ -73,7 +73,7 @@
 
           <div class="menu-header">
             <div class="menu-content">
-
+  
               <div class="col-sm-9">
                 <nav class="navbar navbar-default" role="navigation">
                   <div class="container-fluid">

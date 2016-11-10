@@ -183,25 +183,9 @@ header.top-header {
 	position: relative;
 	height: 100%;
 
-	// Hero text
-	.hero-text-wrapper {
-		position: absolute;
-		background: none;
-		border: 2px solid #fff;
-		top: 50%;
-		left: 50%;
-		margin-left: -177px;
-		margin-top: -38px;
-
-		h1 {
-			margin: 0;
-			padding: 15px 60px;
-			color: #fff;
-		}
-	}
-
 	// Hero image
 	.hero-image-wrapper {
+		display: flex;
 		background: url('../assets/img/bg.jpg') no-repeat fixed;
 		background-size: cover;
 		height: 400px;
@@ -209,6 +193,22 @@ header.top-header {
 
 		@media (max-width: 768px) {
 			background-attachment: scroll;
+		}
+	}
+
+	// Hero text
+	.hero-text-wrapper {
+		background: none;
+		border: 2px solid #fff;
+		margin: auto;
+
+		span {
+			margin: 0;
+			padding: 15px;
+			color: #fff;
+	    font-family: Amatic SC, serif;
+	    font-size: 48px;
+	    font-weight: 600;
 		}
 	}
 }

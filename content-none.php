@@ -8,11 +8,7 @@
  */
 ?>
 
-<section class="no-results not-found">
-	<header class="page-header">
-		<h1 class="page-title"><?php _e( 'Nothing Found', 'zoet_' ); ?></h1>
-	</header><!-- .page-header -->
-
+<section class="col-md-6 col-md-push-3">
 	<div class="page-content">
 		<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 
@@ -24,9 +20,14 @@
 			<?php get_search_form(); ?>
 
 		<?php else : ?>
-
-			<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'zoet_' ); ?></p>
-			<?php get_search_form(); ?>
+			<div class="alert alert-warning" role="alert">
+				<div class="text-center">
+					<div><i class="fa fa-meh-o fa-2x"></i></div>
+					<em>Helaas peanut butter cheese</em>, geen recept gevonden!
+					<br /><br>
+					<div><a href="/recepten">Check hier</a> al mijn recepten of probeer een andere zoekterm.</div>
+				</div>
+			</div>
 
 		<?php endif; ?>
 	</div><!-- .page-content -->

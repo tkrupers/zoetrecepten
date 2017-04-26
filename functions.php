@@ -181,8 +181,6 @@ function zoet__scripts() {
 
 	wp_enqueue_script('adf-script', '//s3.eu-central-1.amazonaws.com/onstuimig-tag-manager/base/adf-tm-base-min.js');
 
-	wp_enqueue_script('pin-it', '//assets.pinterest.com/js/pinit.js');
-
 	//wp_enqueue_script( 'zoet_-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	//wp_enqueue_script( 'zoet_-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
@@ -193,31 +191,26 @@ function zoet__scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'zoet__scripts' );
 
-/**
-* Async scripts loading
-**/
-add_filter( 'script_loader_tag', 'wsds_async_scripts', 10, 3 );
-function wsds_async_scripts( $tag, $handle, $src ) {
-
-	// The handles of the enqueued scripts we want to async
-	$async_scripts = array(
-		'pin-it',
-		'adf-script',
-		'disqus',
-	);
-
-    if ( in_array( $handle, $async_scripts ) ) {
-        return '<script src="' . $src . '" async="async" type="text/javascript"></script>' . "\n";
-    }
-
-    return $tag;
-}
-
 //Add a Favicon
 add_action( 'wp_head', 'zoetrecepten_add_favicon' );
 function zoetrecepten_add_favicon() {
 	echo '<link rel="Shortcut Icon" type="image/x-icon" href="' . get_stylesheet_directory_uri() . '/favicon.ico" />';
 }
+
+function wpsites_pin_it_init() {
+wp_enqueue_script('pinit-js', '//assets.pinterest.com/js/pinit.js', false, null, true);
+}
+add_action('init', 'wpsites_pin_it_init');
+
+function wpsites_pinit_js_config($url) {
+	if (FALSE === strpos($url, 'pinit') || FALSE === strpos($url, '.js') || FALSE === strpos($url, 'pinterest.com')) {
+	pinit.js.
+	return $url;
+	}
+	$return_string = "' async data-pin-hover='true";
+	return $url . $return_string;
+}
+add_filter('clean_url', 'wpsites_pinit_js_config');
 
 // AJAX CALLS
 function more_post_ajax(){
@@ -427,12 +420,11 @@ function wsds_defer_scripts( $tag, $handle, $src ) {
 		'contact-form-7',
 		'cookie-law-info-script',
 		'sb_instagram_scripts',
-		'pin-it',
 		'comment-reply'
 	);
 
     if ( in_array( $handle, $defer_scripts ) ) {
-        return '<script src="' . $src . '" defer="defer" type="text/javascript"></script>' . "\n";
+        return '<script src="' . $src . '" defer type="text/javascript"></script>' . "\n";
     }
 
     return $tag;
@@ -446,11 +438,12 @@ function add_async_attribute($tag, $handle) {
 		 'adf-script',
 		 'script-js',
 		 'theme-js',
+		 'disqus'
 	 );
 
    foreach($scripts_to_async as $async_script) {
       if ($async_script === $handle) {
-         return str_replace(' src', ' async="async" src', $tag);
+         return str_replace(' src', ' async src', $tag);
       }
    }
    return $tag;

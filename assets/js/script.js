@@ -28,8 +28,7 @@
 	jQuery(".single-page-article img").each(function() {
 		var siteUrl = window.location.href;
 		var url = jQuery(this).attr('src');
-
-		var pinit="<a href='https://www.pinterest.com/pin/create/button/?url=" + siteUrl + "&media=" + url + "' class='pin-it-button'></a>";
+		var pinit="<a data-pin-do='buttonPin' href='https://www.pinterest.com/pin/create/button/?url=" + siteUrl + "&media=" + url + "' data-pin-shape='round'></a>";
 
 		jQuery(this).before(pinit);
 	});
